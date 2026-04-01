@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimpleTik</title>
+  <style>
+    :root {
+      --bg: #f6f9fc;
+      --card: rgba(255,255,255,0.72);
+      --border: rgba(22, 97, 176, 0.14);
+      --text: #1d3557;
+      --muted: #5e738f;
+      --accent: #1f70c1;
+      --accent-2: #f39a11;
+      --shadow: 0 18px 50px rgba(23, 62, 110, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,112,193,0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(243,154,17,0.05), transparent 24%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+    }
+
+    .shell {
+      width: min(980px, 100%);
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 5vw, 46px);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(31,112,193,0.08);
+      border: 1px solid rgba(31,112,193,0.14);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #27c26c, #15a04f);
+      box-shadow: 0 0 0 4px rgba(39,194,108,0.14);
+    }
+
+    .splash {
+      width: min(100%, 820px);
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    p {
+      margin: 18px auto 0;
+      max-width: 720px;
+      font-size: clamp(1rem, 1.6vw, 1.12rem);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: #7d8ea4;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .card { border-radius: 22px; }
+      .badge { margin-bottom: 18px; }
+      p { line-height: 1.6; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <div class="badge"><span class="dot"></span> Preview release now available</div>
+      <img class="splash" src="SimpleTik-Splash.png" alt="SimpleTik splash screen" />
+      <h1>SimpleTik</h1>
+      <p>
+        A modern, concept-first interface for <span class="accent">MikroTik</span> routers.
+        SimpleTik turns complex RouterOS menus into a clearer, bigger-picture view of your network —
+        with VLANs, WiFi, devices, and live visibility organized the way IT actually thinks.
+      </p>
+      <p class="footer">Current public build: Preview</p>
+    </section>
+  </main>
+</body>
+</html>
